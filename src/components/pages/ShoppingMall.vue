@@ -24,6 +24,7 @@
 </template>
 
 <script>
+import axios from 'axios'
 export default {
     name: '',
     data() {
@@ -35,6 +36,18 @@ export default {
                 { imageUrl: require('../../assets/images/simleVueDemoPic003.jpg') }
             ]
         }
+    },
+    created() {
+        axios({
+            url: 'https://www.easy-mock.com/mock/5ae2427800247c2aa1efe442/SmileVue/index',
+            method: 'get'
+        })
+            .then(response => {
+                console.log(response)
+            })
+            .catch((error) => {
+                console.log(error);
+            })
     }
 }
 </script>
